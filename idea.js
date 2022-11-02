@@ -1,8 +1,8 @@
 class Idea{
-    constructor(){
+    constructor(title,body){
         this.id = DateTime.Now()
-        this.title = '';
-        this.body = '';
+        this.title = title;
+        this.body = body;
         this.star = false;
     }
     updateIdea(){
