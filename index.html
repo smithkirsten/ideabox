@@ -1,168 +1,40 @@
 <!DOCTYPE html>
 <html lang="en"> <!-- sets the default language of file -->
     <head>
-        <style>
-        body {
-            margin: 0;
-        }
-        .menu-section {
-            background-color: #1F1F3D;
-            font-family: "Open Sans";
-            display: flex;
-            align-items: stretch;
-            flex-direction: column;
-            font-weight: bold;
-            height: 100%;
-            width: 250px;
-        }
-        .title {
-            font-size: 16px;
-            display: flex;
-            align-items: flex-start;
-            flex-direction: column-reverse;
-            font-family: "Open Sans", sans-serif;
-            font-weight: bolder;
-            color: #E9E9F3;
-            margin: 15px;
-        }
-        .menu-functions-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border-top: 2px solid #353567;
-            border-bottom: 2px solid #353567;
-            padding: 20px 10px;
-        }
-        #filter-starred-ideas-button {
-            color: #BFBFDD;
-            font-family: "Open Sans", sans-serif;
-            font-size: 14px;
-            font-weight: bolder;
-            background: none;
-            border: none;
-            margin: 0 0 20px -90px;
-        }
-        #show-starred-ideas-button {
-            background-color: #5356A4;
-            font-family: "Open Sans", sans-serif;
-            color: #E9E9F3;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: not-allowed;
-            height: 40px;
-            width: 200px;
-            border: 1px solid #353567;
-        }
-
-        .ideas-input-form {
-            background-color: #A9AAD2;
-            font-family: "Open Sans", sans-serif;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            font-weight: bold;
-            justify-content: space-evenly;
-            height: 40%;
-            width: 100%;
-            padding: 25px 0 0 0;
-        }
-        #title-text {
-            color: #1F1F3D;
-            margin-left: -275px;
-
-        }
-        #body-text {
-            color: #1F1F3D;
-            margin-left: -275px;
-
-
-        }
-        #title-input {
-            border: 2px solid #5356A4;
-            border-radius: 4px;
-            height: 50px;
-            width: 300px;
-            font-family: "Open Sans", sans-serif;
-            font-weight: light;
-            color: #5356A4;
-        }
-
-        #body-input {
-            border: 2px solid #5356A4;
-            border-radius: 4px;
-            height: 100px;
-            width: 300px;
-            font-family: "Open Sans", sans-serif;
-            font-weight: light;
-            color: #5356A4
-        }
-
-        #save-button {
-            color: #E9E9F3;
-            background-color: #363567;
-            border: 2px solid #5356A4;
-            border-radius: 4px;
-            font-size: 18px;
-            font-weight: bolder;
-            cursor: pointer;
-            margin-left: 6px;
-            height: 40px;
-            width: 300px;
-        }
-
-        .ideas-grid {
-            background-color: #EAEAF4; /* doesn't work */
-        }
-
-        #search-bar-icon {
-            height: 25px;
-            width: 25px;
-        }
-
-        #search-bar {
-            border: 2px solid #5356A4;
-            border-radius: 4px;
-            font-family: "Open Sans", sans-serif;
-            font-weight: light;
-            color: #5356A4;
-            height: 50px;
-            width: 300px;
-        }
-
-        ::placeholder {
-            color: #5356A4;
-        }
-
-        </style>
-        <link rel=“stylesheet” type="text/css" href=/styles.css /> 
+        <link rel="stylesheet" href="styles.css">
         <meta charset="UTF-8"> <!-- sets the standard character set that the web browser reads -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
         <title>IdeaBox</title> <!-- changes the name of the web application in the tab -->
         <link rel="icon"  type="image/png" href="https://cdn-icons-png.flaticon.com/512/2207/2207771.png"> <!-- changes the icon tht appears next to the title in the tab -->
     </head>
     
-    <body>   
-        <aside class="menu-section"> <!-- added a class for the menu section-->
-            <h1 class="title">IdeaBox</h1>
-            <div class="menu-functions-container">
-                <button id="filter-starred-ideas-button">Filter Starred Ideas</button>
-                <button id="show-starred-ideas-button">Show Starred Ideas</button>
-            </div>
-        </aside>
-        <form class="ideas-input-form"> <!-- added a class for the form section-->
-            <label for="title" id="title-text">Title</label><!-- <br> adds a line break from the input section's title and the input section itself-->
-            <textarea type="text" name="title" id="title-input"></textarea>
+    <body>
+        <div class="information-containers">   
+            <aside class="menu-section"> <!-- added a class for the menu section-->
+                <h1 class="title">IdeaBox</h1>
+                <div class="menu-functions-container">
+                    <button id="filter-starred-ideas-button">Filter Starred Ideas</button>
+                    <button id="show-starred-ideas-button">Show Starred Ideas</button>
+                </div>
+            </aside>
+            <form class="ideas-input-form"> <!-- added a class for the form section-->
+                <label for="title" id="title-text">Title</label><!-- <br> adds a line break from the input section's title and the input section itself-->
+                <textarea type="text" name="title" id="title-input"></textarea>
 
-            <label for="body" id="body-text">Body</label><!-- <br> adds a line break from the input section's title and the input section itself-->
-            <textarea type="text" name="body" id="body-input"></textarea><br>
+                <label for="body" id="body-text">Body</label><!-- <br> adds a line break from the input section's title and the input section itself-->
+                <textarea type="text" name="body" id="body-input"></textarea><br>
 
-            <button id="save-button">Save</button>
+                <button id="save-button">Save</button>
 
-            <img src="./assets/search.svg" alt="magnifying glass" id="search-bar-icon">
-            <input type="text" placeholder="Search ideas" name="search" id="search-bar"><br>
-        </form>
+                <img src="./assets/search.svg" alt="magnifying glass" id="search-bar-icon">
+                <input type="text" placeholder="Search ideas" name="search" id="search-bar"><br>
+            </form>
         <section class="ideas-grid"> <!-- added a class for the ideas section-->
             <article class="idea-card-grid"></article>
         </section>
+    </div>
     </body>
     <script type=“text/javascript” src=“./idea.js”></script>
     <script type=“text/javascript” src=“./main.js”></script>
