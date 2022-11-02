@@ -117,13 +117,12 @@ body {
     font-size: 18px;
     font-weight: bolder;
     cursor: pointer;
-    margin-left: 6px;
     height: 50px;
-    width: 300px;
+    width: 307px;
 }
 
 .ideas-grid {
-    background-color: red; /* doesn't work */
+    background-color: #5356A4; 
 }
 
 #search-bar-icon {
@@ -140,6 +139,7 @@ body {
     height: 43px;
     width: 300px;
 }
+
 
 ::placeholder {
     color: #5356A4;
