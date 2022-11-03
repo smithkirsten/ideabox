@@ -169,9 +169,39 @@ body {
     color: #5356A4;
 }
 
-/* .idea-card {
+/*=========
+}============*/
 
-} */
+.idea-card {
+
+}
+.card-header{
+    background-color: #1F1F3D;
+    display: flex;
+    justify-content: space-between;
+}
+.icons{
+    height: 25px;
+}
+.input-content{
+    background-color: #FFFFFF;
+}
+.idea-card-title{
+
+}
+.idea-card-body{
+    color:#1F1F3D
+    font-weight: lighter;
+}
+.card-footer{
+    background-color: #5356A4;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+}
+
+
 
 
 /* The current css file isn't connected to the HTML file for some reason */

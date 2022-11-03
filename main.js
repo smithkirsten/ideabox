@@ -23,7 +23,6 @@ var ideaCard;
 
 // functions 
 
-
 //this function creats a new instence of idea, and pushes it into savedIdeas array
 //this function should prevent duplicates
 function saveIdeaCard() {
@@ -48,15 +47,15 @@ function displayNewCard(){
 
     grid.innerHTML += `<article id="${ideaCard.id}" class="idea-card"> 
     <header class="card-header">
-        <img class="star-icon" src="./assets/star.svg" alt="star icon">
-        <img class="x-icon" src="./assets/delete.svg" alt="x icon">
+        <img class="icons star-icon" src="./assets/star.svg" alt="star icon">
+        <img class="icons x-icon" src="./assets/delete.svg" alt="x icon">
     </header>
     <div class="input-content">
     <h2 class="idea-card-title">${ideaCard.title}</h2>
     <p class="idea-card-body">${ideaCard.body}</p>
     </div>
-    <footer>
-        <img class="comment-icon" src="./assets/comment.svg" alt="plus icon"><span>Comment</span>
+    <footer class="card-footer">
+        <img class="icons comment-icon" src="./assets/comment.svg" alt="plus icon"><span>Comment</span>
     </footer>
     </article>`;
 }
@@ -67,14 +66,14 @@ function clearInputs(){
 }
 
 //Iteration 2
+//style card
+
 // disable save button until both input fields have content
     // css pseudo-class disabled can work like hidden 
         // might have to change cursor property separately
         //[https://developer.mozilla.org/en-US/docs/Web/CSS/:disabled](https://developer.mozilla.org/en-US/docs/Web/CSS/:disabled)
         //[https://css-tricks.com/almanac/selectors/d/disabled/](https://css-tricks.com/almanac/selectors/d/disabled/)
 
-// we will need a function to create a new card that will be pushed into the saved grid
-    //interpolate values from new object instance into inner HTML for .idea-card-grid
 
 // Iteration 3
 
