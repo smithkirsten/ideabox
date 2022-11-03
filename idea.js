@@ -1,6 +1,6 @@
 class Idea{
     constructor(title, body){
-        this.id = DateTime.Now()
+        this.id = Date.now();
         this.title = title;
         this.body = body;
         this.star = false;

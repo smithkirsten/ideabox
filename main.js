@@ -12,13 +12,10 @@ var bodyInput = document.querySelector('#body-input');
 
 saveButton.addEventListener('click', function(event) {
     event.preventDefault();
-    console.log("I listened!")
     saveIdeaCard();
     clearInputs();
     displayNewCard();
 }) 
-
-
 
 //global variables for cards
 var savedIdeas = [];
@@ -31,43 +28,43 @@ var ideaCard;
 //this function should prevent duplicates
 function saveIdeaCard() {
     console.log("clicked")
-    var titleValue = titleInput.innerText;
-    var bodyValue = bodyInput.innerText;
+    var titleValue = titleInput.value;
+    var bodyValue = bodyInput.value;
     console.log(titleValue);
     console.log(bodyValue);
 
-    // ideaCard = new Idea(titleValue, bodyValue);
-    // console.log(ideaCard);
+    ideaCard = new Idea(titleValue, bodyValue);
+    console.log(ideaCard);
 
-    // savedIdeas.push(ideaCard);
-    // console.log(savedIdeas);
-    //create conditional to check for duplicates
-        //if(savedIdeas.includes(ideaCard))
+    savedIdeas.push(ideaCard);
+    console.log(savedIdeas);
+    // create conditional to check for duplicates
+    //     if(savedIdeas.includes(ideaCard))
     }
 
   //display card
 
-// function displayNewCard(){
-//     console.log("inside dispay function!")
-//     grid.innerHTML += `<article id="${ideaCard.id}" class="idea-card"> 
-//     <header class="card-header">
-//         <img class="star-icon" src="/star.svg" alt="star icon">
-//         <img class="x-icon" src="/delete.svg" alt="x icon">
-//     </header>
-//     <div class="input-content">
-//     <h2 class="idea-card-title">${ideaCard.title}</h2>
-//     <p class="idea-card-body">${ideaCard.body}</p>
-//     </div>
-//     <footer>
-//         <img class="comment-icon" src="/comment.svg" alt="plus icon"><span>Comment</span>
-//     </footer>
-//     </article>`;
-// }
+function displayNewCard(){
 
-// function clearInputs(){
-//     titleInput.value = ''
-//     bodyInput.value = ''
-// }
+    grid.innerHTML += `<article id="${ideaCard.id}" class="idea-card"> 
+    <header class="card-header">
+        <img class="star-icon" src="./assets/star.svg" alt="star icon">
+        <img class="x-icon" src="./assets/delete.svg" alt="x icon">
+    </header>
+    <div class="input-content">
+    <h2 class="idea-card-title">${ideaCard.title}</h2>
+    <p class="idea-card-body">${ideaCard.body}</p>
+    </div>
+    <footer>
+        <img class="comment-icon" src="./assets/comment.svg" alt="plus icon"><span>Comment</span>
+    </footer>
+    </article>`;
+}
+
+function clearInputs(){
+    titleInput.value = ''
+    bodyInput.value = ''
+}
 
 //Iteration 2
 // disable save button until both input fields have content
