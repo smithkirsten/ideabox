@@ -2,18 +2,19 @@ var Idea = require('../ideabox/Idea');
 
 // querySelectors
 var saveButton = document.querySelector('#save-button');
+var grid = document.querySelector('#grid-container');
 var titleInput = document.querySelector('#title-input');
 var bodyInput = document.querySelector('#body-input');
-var grid = document.querySelector('#grid-container');
-
 
 
 // eventListeners
-saveButton.addEventListener('click',function(event){
+//event listener for page load that sets save button to disabled?
+
+saveButton.addEventListener('click', function(event) {
     event.preventDefault();
     saveIdeaCard();
-    clearInputs();
-    displayNewCard();
+    // clearInputs();
+    // displayNewCard();
 })
 
 
@@ -27,41 +28,44 @@ var ideaCard;
 //this function creats a new instence of idea, and pushes it into savedIdeas array
 //this function should prevent duplicates
 function saveIdeaCard() {
-    ideaCard = new Idea(titleInput.value, bodyInput.value)
-    if(!savedIdeas.includes(ideaCard)) {
-      //don't save duplicates
-    }
-    else{
-        savedIdeas.push(ideaCard)
-    }
+    var titleValue = titleInput.value;
+    var bodyValue = bodyInput.value;
+
+    console.log(titleValue);
+    console.log(bodyValue);
+
+    ideaCard = new Idea(titleValue, bodyValue);
+    console.log(ideaCard);
+    
+    savedIdeas.push(ideaCard);
+    console.log(savedIdeas);
+    //create conditional to check for duplicates
+        //if(savedIdeas.includes(ideaCard))
   }
 
   //display card
 
-function displayNewCard(){
-    grid.innerHTML +=
-    
-    
-    
-    `<article id="${ideaCard.id}" class="idea-card"> 
-    <header class="card-header">
-        <img class="star-icon" src="/star.svg" alt="star icon">
-        <img class="x-icon" src="/delete.svg" alt="x icon">
-    </header>
-    <div class="input-content">
-    <h2 class="idea-card-title">${ideaCard.title}</h2>
-    <p class="idea-card-body">${ideaCard.body}</p>
-    </div>
-    <footer>
-        <img class="comment-icon" src="/comment.svg" alt="plus icon"><span>Comment</span>
-    </footer>
-    </article>`
-}
+// function displayNewCard(){
+//     console.log("inside dispay function!")
+//     grid.innerHTML += `<article id="${ideaCard.id}" class="idea-card"> 
+//     <header class="card-header">
+//         <img class="star-icon" src="/star.svg" alt="star icon">
+//         <img class="x-icon" src="/delete.svg" alt="x icon">
+//     </header>
+//     <div class="input-content">
+//     <h2 class="idea-card-title">${ideaCard.title}</h2>
+//     <p class="idea-card-body">${ideaCard.body}</p>
+//     </div>
+//     <footer>
+//         <img class="comment-icon" src="/comment.svg" alt="plus icon"><span>Comment</span>
+//     </footer>
+//     </article>`;
+// }
 
-function clearInputs(){
-    titleInput.value = ''
-    bodyInput.value = ''
-}
+// function clearInputs(){
+//     titleInput.value = ''
+//     bodyInput.value = ''
+// }
 
 //Iteration 2
 // disable save button until both input fields have content
@@ -88,7 +92,9 @@ function clearInputs(){
 
 //search function
     //’key down’ event listener to listen for typing
-    //.contains() (add hidden class to cards that don't contain ALL letters (&&))
+    //.contains() (add hidden class to cards that don't contain ALL letters (&&)... or concat? to search ordered letters?)
+
+//other possible resources: change event listener
 
 //DONE:
     //-save new idea card & clear input fields

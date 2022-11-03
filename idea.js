@@ -1,5 +1,5 @@
 class Idea{
-    constructor(title,body){
+    constructor(title, body){
         this.id = DateTime.Now()
         this.title = title;
         this.body = body;
@@ -8,7 +8,6 @@ class Idea{
     updateIdea(){
 
     }
-
 }
 
-module.exports = Idea;
+// module.exports = Idea;
