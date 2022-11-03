@@ -190,7 +190,7 @@ body {
 
 }
 .idea-card-body{
-    color:#1F1F3D
+    color:#1F1F3D;
     font-weight: lighter;
 }
 .card-footer{
@@ -199,6 +199,12 @@ body {
     display: flex;
     align-items: center;
     font-weight: normal;
+}
+
+#save-button:disabled {
+    background-color: #8D8EB4;
+    border: 2px solid #626385;
+    cursor: not-allowed;
 }
 
 
