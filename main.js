@@ -26,17 +26,10 @@ var ideaCard;
 //this function creats a new instence of idea, and pushes it into savedIdeas array
 //this function should prevent duplicates
 function saveIdeaCard() {
-    console.log("clicked")
     var titleValue = titleInput.value;
     var bodyValue = bodyInput.value;
-    console.log(titleValue);
-    console.log(bodyValue);
-
     ideaCard = new Idea(titleValue, bodyValue);
-    console.log(ideaCard);
-
     savedIdeas.push(ideaCard);
-    console.log(savedIdeas);
     // create conditional to check for duplicates
     //     if(savedIdeas.includes(ideaCard))
     }
@@ -69,7 +62,8 @@ function clearInputs(){
 //style card
 
 // disable save button until both input fields have content
-    // css pseudo-class disabled can work like hidden 
+    //css pseudo-class disabled can work like hidden 
+    //listen for key down in either field. Fires: if both .values === true; THEN remove disabled
         // might have to change cursor property separately
         //[https://developer.mozilla.org/en-US/docs/Web/CSS/:disabled](https://developer.mozilla.org/en-US/docs/Web/CSS/:disabled)
         //[https://css-tricks.com/almanac/selectors/d/disabled/](https://css-tricks.com/almanac/selectors/d/disabled/)
