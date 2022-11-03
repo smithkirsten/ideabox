@@ -1,6 +1,6 @@
 var Idea = require('../ideabox/Idea');
 
-// query selectors
+// querySelectors
 
 var saveButton = document.querySelector('#save-button');
 var titleInput = document.querySelector('#title-input');
@@ -8,13 +8,13 @@ var bodyInput = document.querySelector('#body-input');
 
 
 
-// eventListners
+// eventListeners
 
 saveButton.addEventListener('click',function(event){
     event.preventDefault()
     saveIdeaCard()
     clearInputs()
-// display poster with innerHTML
+// display idea card with innerHTML
 })
 
 
@@ -28,27 +28,21 @@ var ideaCard;
 
 ///this function creats a new instence of idea, and pushes it into savedIdeas array
 
-///// this function should prevent duplicates
+//this function should prevent duplicates
 function saveIdeaCard() {
     ideaCard = new Idea(titleInput.value, bodyInput.value)
-    if(bodyInput.value !== null && bodyInput.value === ""){
-        return ' please wright somthing here'
-    }
-    else if(titleInput.value !== null && titleInput.value === ""){
-        return ' please wright somthing here'
-    }
-    else if(!savedIdeas.includes(ideaCard)) {
-      
+    if(!savedIdeas.includes(ideaCard)) {
+      //don't save duplicates
     }
     else{
         savedIdeas.push(ideaCard)
     }
   }
 
-function saveIdeaCard(){
-    ideaCard = new Idea(titleInput.value, bodyInput.value)
-    savedIdeas.push(ideaCard)
-}
+// function saveIdeaCard(){
+//     ideaCard = new Idea(titleInput.value, bodyInput.value)
+//     savedIdeas.push(ideaCard)
+// }
 
 function clearInputs(){
     titleInput.value = ''
@@ -57,14 +51,11 @@ function clearInputs(){
 
 //Iteration 2
 // disable save button until both input fields have content
-    // css sudo class disabled can work like hidden 
-        // might have to change cursser property sepretly
+    // css pseudo-class disabled can work like hidden 
+        // might have to change cursor property sepretly
 
 // we will need a save function to push new options in to the new saved array
 // prevent default on save button
-
-
-
     //gather user input instantiate into class 
     //push new object into saved array
     //clear input fields
@@ -82,5 +73,5 @@ function clearInputs(){
 
 
 
-// faverit function
+// favorite function
 
