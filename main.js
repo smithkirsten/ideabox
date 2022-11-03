@@ -1,4 +1,4 @@
-// var Idea = require('../ideabox/Idea');
+//var Idea = require('../ideabox/Idea');
 
 // querySelectors
 var saveButton = document.querySelector('#save-button');
@@ -12,10 +12,12 @@ var bodyInput = document.querySelector('#body-input');
 
 saveButton.addEventListener('click', function(event) {
     event.preventDefault();
+    console.log("I listened!")
     saveIdeaCard();
-    // clearInputs();
-    // displayNewCard();
-})
+    clearInputs();
+    displayNewCard();
+}) 
+
 
 
 //global variables for cards
@@ -28,9 +30,9 @@ var ideaCard;
 //this function creats a new instence of idea, and pushes it into savedIdeas array
 //this function should prevent duplicates
 function saveIdeaCard() {
-    var titleValue = titleInput.value;
-    var bodyValue = bodyInput.value;
-
+    console.log("clicked")
+    var titleValue = titleInput.innerText;
+    var bodyValue = bodyInput.innerText;
     console.log(titleValue);
     console.log(bodyValue);
 
