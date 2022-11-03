@@ -5,13 +5,13 @@
         <meta charset="UTF-8"> <!-- sets the standard character set that the web browser reads -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,800" rel="stylesheet">
         <title>IdeaBox</title> <!-- changes the name of the web application in the tab -->
         <link rel="icon"  type="image/png" href="https://cdn-icons-png.flaticon.com/512/2207/2207771.png"> <!-- changes the icon tht appears next to the title in the tab -->
     </head>
     
     <body>
-        <div class="information-containers">   
+          
             <aside class="menu-section"> <!-- added a class for the menu section-->
                 <h1 class="title">IdeaBox</h1>
                 <div class="menu-functions-container">
@@ -19,10 +19,11 @@
                     <button id="show-starred-ideas-button">Show Starred Ideas</button>
                 </div>
             </aside>
-            <form class="ideas-input-form"> <!-- added a class for the form section-->
+        <section class>
+            <form class="right-container"> <!-- added a class for the form section-->
                 <label for="title" id="title-text">Title</label><!-- <br> adds a line break from the input section's title and the input section itself-->
                 <textarea type="text" name="title" id="title-input"></textarea>
-
+                
                 <label for="body" id="body-text">Body</label><!-- <br> adds a line break from the input section's title and the input section itself-->
                 <textarea type="text" name="body" id="body-input"></textarea><br>
 
@@ -31,10 +32,21 @@
                 <img src="./assets/search.svg" alt="magnifying glass" id="search-bar-icon">
                 <input type="text" placeholder="Search ideas" name="search" id="search-bar"><br>
             </div>
-            </form>
-        <section class="ideas-grid"> <!-- added a class for the ideas section-->
-                  <article class="idea-card-grid">
+            <div class="right-container grid" id="gridContainer"></div>
+            </div>  
+        </section>
+    </body>
+    <script type=“text/javascript” src=“./idea.js”></script>
+    <script type=“text/javascript” src=“./main.js”></script>
+</html>
+
+<!-- Check with John about HTML  
+    
+    
+    <article class="idea-card-grid">
                     <header>
+                        <div class="grid-container" id="gridContainer">
+                        </div>
                         <img src="assets/star-active.svg" class="star-img">
                         <h2>UserIdea</h2>
                     </header>    
@@ -44,15 +56,6 @@
                     <footer>
                         <img src="assets/comment.svg" class="comment-img">
                     </footer>
-                </article>
-                        
-                </footer>
-              </div>
-        </section>
-    </div>
-    </body>
-    <script type=“text/javascript” src=“./idea.js”></script>
-    <script type=“text/javascript” src=“./main.js”></script>
-</html>
-
-<!-- Check with John about HTML -->
+                  </article>  
+                
+                -->
