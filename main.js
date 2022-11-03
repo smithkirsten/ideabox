@@ -27,6 +27,24 @@ var ideaCard;
 
 
 ///this function creats a new instence of idea, and pushes it into savedIdeas array
+
+///// this function should prevent duplicates
+function saveIdeaCard() {
+    ideaCard = new Idea(titleInput.value, bodyInput.value)
+    if(bodyInput.value !== null && bodyInput.value === ""){
+        return ' please wright somthing here'
+    }
+    else if(titleInput.value !== null && titleInput.value === ""){
+        return ' please wright somthing here'
+    }
+    else if(!savedIdeas.includes(ideaCard)) {
+      
+    }
+    else{
+        savedIdeas.push(ideaCard)
+    }
+  }
+
 function saveIdeaCard(){
     ideaCard = new Idea(titleInput.value, bodyInput.value)
     savedIdeas.push(ideaCard)
