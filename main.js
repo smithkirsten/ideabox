@@ -1,4 +1,4 @@
-var Idea = require('../ideabox/Idea');
+// var Idea = require('../ideabox/Idea');
 
 // querySelectors
 var saveButton = document.querySelector('#save-button');
@@ -34,14 +34,14 @@ function saveIdeaCard() {
     console.log(titleValue);
     console.log(bodyValue);
 
-    ideaCard = new Idea(titleValue, bodyValue);
-    console.log(ideaCard);
-    
-    savedIdeas.push(ideaCard);
-    console.log(savedIdeas);
+    // ideaCard = new Idea(titleValue, bodyValue);
+    // console.log(ideaCard);
+
+    // savedIdeas.push(ideaCard);
+    // console.log(savedIdeas);
     //create conditional to check for duplicates
         //if(savedIdeas.includes(ideaCard))
-  }
+    }
 
   //display card
 
