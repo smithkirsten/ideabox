@@ -16,6 +16,12 @@ saveButton.addEventListener('click', function(event) {
     clearInputs();
     displayNewCard();
 }) 
+grid.addEventListener('click',function(event){
+    event.preventDefault()
+    deleteIdea(event)
+});
+
+
 
 //global variables for cards
 var savedIdeas = [];
@@ -57,6 +63,25 @@ function clearInputs(){
     titleInput.value = ''
     bodyInput.value = ''
 }
+
+
+function deleteIdea(event){
+    if(event.target.classList.contains('x-icon')){
+        // remove from data model 
+        for(var i = 0; i < savedIdeas.length; i++){
+            if(savedIdeas[i].id === event.target.closest('.idea-card').id){
+                event.target.closest(`#${savedIdeas[i].id}`).remove();
+                savedIdeas.splice(i, 1)
+
+            }
+        
+        // target indevidualised id 
+       
+        }
+    }
+}
+
+
 
 //Iteration 2
 //style card
