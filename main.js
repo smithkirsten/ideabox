@@ -66,17 +66,12 @@ function clearInputs(){
 
 
 function deleteIdea(event){
-    if(event.target.classList.contains('x-icon')){
-        // remove from data model 
-        for(var i = 0; i < savedIdeas.length; i++){
-            if(savedIdeas[i].id === event.target.closest('.idea-card').id){
-                event.target.closest(`#${savedIdeas[i].id}`).remove();
-                savedIdeas.splice(i, 1)
-
+    if(event.target.classList.contains('x-icon')) {
+        for(var i = 0; i < savedIdeas.length; i++) {
+            if(savedIdeas[i].id.toString() === event.target.closest('.idea-card').id) {
+                event.target.parentElement.parentElement.remove();
+                savedIdeas.splice(i, 1);
             }
-        
-        // target indevidualised id 
-       
         }
     }
 }
