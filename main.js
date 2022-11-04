@@ -15,11 +15,19 @@ saveButton.addEventListener('click', function(event) {
     saveIdeaCard();
     clearInputs();
     displayNewCard();
-}) 
+    disableSavedButton();
+});
+
+window.addEventListener('load', function() {
+    clearInputs();
+    disableSavedButton();
+})
 
 //global variables for cards
 var savedIdeas = [];
 var ideaCard;
+titleInput.addEventListener("keyup", disableSavedButton);
+bodyInput.addEventListener("keyup", disableSavedButton)
 
 // functions 
 
@@ -67,6 +75,15 @@ function clearInputs(){
         // might have to change cursor property separately
         //[https://developer.mozilla.org/en-US/docs/Web/CSS/:disabled](https://developer.mozilla.org/en-US/docs/Web/CSS/:disabled)
         //[https://css-tricks.com/almanac/selectors/d/disabled/](https://css-tricks.com/almanac/selectors/d/disabled/)
+        function disableSavedButton(){
+            if (titleInput.value == '' || bodyInput.value == '') {
+                saveButton.disabled = true;
+                saveButton.classList.add("disabled-button");
+            } else {
+                saveButton.disabled = false;
+                saveButton.classList.remove("disabled-button");
+            }
+        }
 
 
 // Iteration 3
