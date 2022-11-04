@@ -190,6 +190,24 @@ body {
 .icons{
     height: 25px;
 }
+/* .not-favorite {
+    background: url("assets/star-active.svg")repeat; 
+}
+.not-favorite:hover {
+    opacity: 0;
+}
+.favorite {
+    opacity: 0;
+}
+.favorite:hover {
+    opacity: 1; */
+}
+/* .star-icon {
+    background: url("assets/star-active.svg")repeat;
+}
+.star-icon:hover {
+    background: url("assets/star.svg")repeat;
+} */
 .input-content{
     background-color: #FFFFFF;
 }

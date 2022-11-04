@@ -1,26 +1,21 @@
-//var Idea = require('../ideabox/Idea');
-
 // querySelectors
 var saveButton = document.querySelector('#save-button');
 var grid = document.querySelector('#grid-container');
 var titleInput = document.querySelector('#title-input');
 var bodyInput = document.querySelector('#body-input');
 
-
 // eventListeners
-//event listener for page load that sets save button to disabled?
 
 saveButton.addEventListener('click', function(event) {
     event.preventDefault();
     saveIdeaCard();
     clearInputs();
-    displayNewCard();
+    displayNewCard(checkStarValue());
 }) 
 grid.addEventListener('click',function(event){
-    event.preventDefault()
-    deleteIdea(event)
+    event.preventDefault();
+    whatClicked(event);
 });
-
 
 
 //global variables for cards
@@ -39,14 +34,17 @@ function saveIdeaCard() {
     // create conditional to check for duplicates
     //     if(savedIdeas.includes(ideaCard))
     }
-
-  //display card
-
-function displayNewCard(){
-
+function checkStarValue() {
+    if(ideaCard.star){
+        return './assets/star-active.svg';
+    }
+    return './assets.star.svg';
+}
+function displayNewCard(starImage){
+    //read value of ideaCard and interpolate red star if true and white star if false
     grid.innerHTML += `<article id="${ideaCard.id}" class="idea-card"> 
     <header class="card-header">
-        <img class="icons star-icon" src="./assets/star.svg" alt="star icon">
+        <img class="icons star-icon not-favorite" src="${starImage}" alt="star icon">
         <img class="icons x-icon" src="./assets/delete.svg" alt="x icon">
     </header>
     <div class="input-content">
@@ -58,24 +56,55 @@ function displayNewCard(){
     </footer>
     </article>`;
 }
-
 function clearInputs(){
     titleInput.value = ''
     bodyInput.value = ''
 }
-
-
-function deleteIdea(event){
+function whatClicked(event) {
     if(event.target.classList.contains('x-icon')) {
-        for(var i = 0; i < savedIdeas.length; i++) {
-            if(savedIdeas[i].id.toString() === event.target.closest('.idea-card').id) {
-                event.target.parentElement.parentElement.remove();
-                savedIdeas.splice(i, 1);
-            }
-        }
+        deleteIdea(event);
+    } else if (event.target.classList.contains('star-icon')) {
+        //grab id from event.target.parent.parent
+        //loop through savedIdeas array
+            //if savedIdeas[i].id === event id
+                //savedIdeas[i].updateIdea()
+        
+        //updateIdea
+    
+
+        //change icon on DOM
+            //reset grid innerHTML = ''
+            //for loop savedIdeas 
+                //ideaCard = savedIdeas[i]
+                //displayIdea(checkStarValue())
     }
 }
+//function that reads value of star and interpolates image src based on that value
 
+function deleteIdea(event){
+    for(var i = 0; i < savedIdeas.length; i++) {
+        if(savedIdeas[i].id.toString() === event.target.closest('.idea-card').id) {
+            event.target.parentElement.parentElement.remove();
+            savedIdeas.splice(i, 1);
+        }
+    }
+
+}
+function changeStarIcon() {
+    //if this.star
+        //change red
+    //if !this.star
+        //change white
+}
+
+//hover to change img for star
+//hover to change img for x
+
+//when star clicked
+    //event.target.someParentSomethingIdea.updateIdea
+        //this.star = true;
+         //img toggles to red
+            //if event.target
 
 
 //Iteration 2
