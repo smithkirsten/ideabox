@@ -1,3 +1,290 @@
-* {
+/** {
     border: black solid;
+} */
+/*#title {
+    background-color: #1F1F3D;
+    background-color: #A9AAD2;
+    background-color: #EAEAF4;
+    font-family: "Lucida Console", "Courier New", monospace;
+}*/
+
+body {
+    display: flex;
+    margin: 0;
+    height: 100%;
+    width: 100%
 }
+
+
+.grid-container {
+    display: flex;
+}
+
+.menu-section {
+    background-color: #1F1F3D;
+    border-right: 2px solid #eaeaf4;
+    font-family: "Open Sans";
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    font-weight: bold;
+    height: 100vh; 
+    width: 360px;
+}
+.title {
+    font-size: 20px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column-reverse;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bolder;
+    color: #E9E9F3;
+    margin: 19px;
+}
+.menu-functions-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 2px solid #353567;
+    border-bottom: 2px solid #353567;
+    padding: 28px 18px;
+}
+#filter-starred-ideas-button {
+    color: #BFBFDD;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: bolder;
+    background: none;
+    border: none;
+    margin: -7px 30px 28px -80px;
+}
+#show-starred-ideas-button {
+    background-color: #5356A4;
+    font-family: "Open Sans", sans-serif;
+    color: #E9E9F3;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: not-allowed;
+    height: 48px;
+    width: 200px;
+    border: 1px solid #353567;
+    border-radius: 2px;
+}
+
+.right-container {
+    background-color: #A9AAD2;
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-weight: bold;
+    justify-content: space-around;
+    height: 35vh;  
+    width: 80vw;
+    padding: 4vh 0 0 0;
+}
+
+#title-text {
+    color: #1F1F3D;
+    margin-left: -270px;
+    padding-bottom: 5px;
+
+}
+#body-text {
+    color: #1F1F3D;
+    margin-left: -270px;
+    padding-top: 22px;
+    padding-bottom: 5px;
+}
+#title-input {
+    border: 2px solid #5356A4;
+    border-radius: 4px;
+    height: 40px;
+    width: 300px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: lighter;
+    color: #5356A4;
+}
+
+#body-input {
+    border: 2px solid #5356A4;
+    border-radius: 4px;
+    height: 85px;
+    width: 300px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: light;
+    color: #5356A4
+}
+
+#save-button {
+    color: #E9E9F3;
+    font-family: "Open Sans", sans-serif;
+    background-color: #363567;
+    border: 2px solid #5356A4;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bolder;
+    cursor: pointer;
+    height: 50px;
+    width: 307px;
+}
+
+
+
+
+/*=========
+}============*/
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    height: 57vh;
+    background-color: #eaeaf4;
+    justify-items: center;
+    justify-content: space-evenly;
+  }
+
+#search-bar-icon {
+    height: 25px;
+    width: 25px;
+    background-color: #353567;
+    padding: 10px;
+    margin-top: 21px;
+    border: 2px 0 2px 2px #5356A4 ;
+}
+
+#search-bar {
+    border: 2px solid #5356A4;
+    border-radius: 4px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: light;
+    color: #5356A4;
+    height: 40px;
+    width: 255px;
+    margin: 20px 0 20px 0
+}
+
+.search-ideas {
+    display: flex;   
+}
+
+::placeholder {
+    color: #5356A4;
+}
+
+/*=========
+}============*/
+
+.idea-card {
+    margin: 0;
+    border: solid 2px #1F1F3D;
+    height: 270px;
+    padding: 0;
+    width: 225px;
+}
+.card-header{
+    background-color: #1F1F3D;
+    display: flex;
+    justify-content: space-between;
+}
+.icons{
+    height: 25px;
+}
+/* .not-favorite {
+    background: url("assets/star-active.svg")repeat; 
+}
+.not-favorite:hover {
+    opacity: 0;
+}
+.favorite {
+    opacity: 0;
+}
+.favorite:hover {
+    opacity: 1; */
+}
+/* .star-icon {
+    background: url("assets/star-active.svg")repeat;
+}
+.star-icon:hover {
+    background: url("assets/star.svg")repeat;
+} */
+.input-content{
+    background-color: #FFFFFF;
+}
+.idea-card-title{
+    margin: 0;
+    padding: 10px;
+    font-size: 20px;
+}
+.idea-card-body{
+    color:#1F1F3D
+    font-weight: lighter;
+    height: 155px;
+    margin: 0;
+    padding: 10px;
+    font-weight: lighter;
+    font-size: 20px;
+}
+.card-footer{
+    background-color: #5356A4;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+}
+
+
+
+
+/* The current css file isn't connected to the HTML file for some reason */
+
+/* Using inline CSS for the HTML file works but we should try to resolve getting the styles.css file to connect to index.html*/
+
+/*
+//Header Text
+font-family: "Open Sans", bold
+---
+//Body and Label Text
+font-family: "Open Sans", light
+---
+//Website Background Colors
+/darkest purple
+background-color: #1F1F3D;
+/medium purple
+background-color: #A9AAD2;
+/lightest purple
+background-color: #EAEAF4;
+---
+//Idea Card Colors
+/star and exit bar (darkest purple)
+/idea title heading color
+/idea card border color
+background-color: #1F1F3D;
+/idea card background color
+background-color: #FFFFFF;
+/body text color
+background-color: #1F1F3D;
+/comment text color
+background-color: #E9E9F3;
+/comment bar color
+background-color: #5356A4;
+---
+//Menu Section Colors
+/IdeaBox text/heading
+background-color: #E9E9F3;
+/line break between IdeaBox heading and Filtered Starred Ideas
+background-color: #353567;
+/Filtered Starred Ideas text/heading
+background-color: #BFBFDD;
+/Show Starred Ideas text color
+background-color: #E9E9F3;
+/Show Starred Ideas button color
+background-color: #5356A4;
+/Entire Main Section background color
+background-color: #1F1F3D;
+
+--line 76 - changed from 40% to 370px
+because anything below50% wouldn't change
+*/
+
+
