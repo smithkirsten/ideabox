@@ -178,6 +178,7 @@ body {
 .idea-card {
     margin: 0;
     border: solid 2px #1F1F3D;
+    background-color: #FFFFFF;
     height: 270px;
     padding: 0;
     width: 225px;
