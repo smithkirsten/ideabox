@@ -11,7 +11,13 @@ saveButton.addEventListener('click', function(event) {
     saveIdeaCard();
     clearInputs();
     displayCards();
-}) 
+    disableSavedButton();
+});
+
+window.addEventListener('load', function() {
+    clearInputs();
+    disableSavedButton();
+})
 grid.addEventListener('click',function(event){
     event.preventDefault();
     whatClicked(event);
@@ -21,19 +27,16 @@ grid.addEventListener('click',function(event){
 //global variables for cards
 var savedIdeas = [];
 var ideaCard;
+titleInput.addEventListener("keyup", disableSavedButton);
+bodyInput.addEventListener("keyup", disableSavedButton)
 
 // functions 
-
-//this function creats a new instence of idea, and pushes it into savedIdeas array
-//this function should prevent duplicates
 function saveIdeaCard() {
     var titleValue = titleInput.value;
     var bodyValue = bodyInput.value;
     ideaCard = new Idea(titleValue, bodyValue);
     savedIdeas.push(ideaCard);
-    //we don't need to prevent doubleclicking here if we disable the button upon saving idea
     }
-    //ceased use if global variable to place this in the beginning of the display cards loop instead of passing in a single value to individual cards
 function checkStarValue(card) {
     if(card.star){
         return './assets/star-active.svg';
@@ -41,8 +44,6 @@ function checkStarValue(card) {
     return './assets/star.svg';
 }
 function displayCards(){
-    //read value of ideaCard and interpolate red star if true and white star if false
-    //we moved grid clearing and loop to display cards so it is condensed in 1 function and will always display a reflection of the data model
     var starImage;
     grid.innerHTML = '';
     for(var i = 0; i < savedIdeas.length; i++) {
@@ -61,7 +62,6 @@ function displayCards(){
         </footer>
         </article>`;
     }
-    //!!!!!!!!!hey put the disable button function here! that way it wont save a repeat!!!!!!!!!!!!!!!!!!
 }
 function clearInputs(){
     titleInput.value = ''
@@ -79,8 +79,6 @@ function whatClicked(event) {
         displayCards();
     }
 }
-//function that reads value of star and interpolates image src based on that value
-//remove way of deleting single card from dom. instead, update data model and then redisplay cards accordingly
 function deleteIdea(event){
     for(var i = 0; i < savedIdeas.length; i++) {
         if(savedIdeas[i].id.toString() === event.target.closest('.idea-card').id) {
@@ -132,6 +130,15 @@ function deleteIdea(event){
         // might have to change cursor property separately
         //[https://developer.mozilla.org/en-US/docs/Web/CSS/:disabled](https://developer.mozilla.org/en-US/docs/Web/CSS/:disabled)
         //[https://css-tricks.com/almanac/selectors/d/disabled/](https://css-tricks.com/almanac/selectors/d/disabled/)
+        function disableSavedButton(){
+            if (titleInput.value == '' || bodyInput.value == '') {
+                saveButton.disabled = true;
+                saveButton.classList.add("disabled-button");
+            } else {
+                saveButton.disabled = false;
+                saveButton.classList.remove("disabled-button");
+            }
+        }
 
 
 // Iteration 3

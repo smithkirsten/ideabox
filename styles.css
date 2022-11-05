@@ -88,8 +88,8 @@ body {
     color: #1F1F3D;
     margin-left: -270px;
     padding-bottom: 5px;
-
 }
+
 #body-text {
     color: #1F1F3D;
     margin-left: -270px;
@@ -217,7 +217,7 @@ body {
     font-size: 20px;
 }
 .idea-card-body{
-    color:#1F1F3D
+    color:#1F1F3D;
     font-weight: lighter;
     height: 155px;
     margin: 0;
@@ -231,6 +231,12 @@ body {
     display: flex;
     align-items: center;
     font-weight: normal;
+}
+
+#save-button:disabled {
+    background-color: #8D8EB4;
+    border: 2px solid #626385;
+    cursor: not-allowed;
 }
 
 
