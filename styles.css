@@ -138,8 +138,9 @@ body {
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 40px;
     height: 57vh;
+    width: 80vw;
     background-color: #eaeaf4;
     justify-items: center;
     justify-content: space-evenly;
@@ -183,17 +184,19 @@ body {
     margin: 0;
     border: solid 2px #1F1F3D;
     background-color: #FFFFFF;
-    height: 270px;
+    height: 350px;
     padding: 0;
-    width: 90%;
+    width: 95%;
 }
 .card-header{
     background-color: #1F1F3D;
     display: flex;
     justify-content: space-between;
+    height: 40px;
+    align-items: center;
 }
 .icons{
-    height: 25px;
+    height: 35px;
 }
 /* .not-favorite {
     background: url("assets/star-active.svg")repeat; 
@@ -224,7 +227,7 @@ body {
 .idea-card-body{
     color:#1F1F3D;
     font-weight: lighter;
-    height: 155px;
+    height: 203px;
     margin: 0;
     padding: 10px;
     font-weight: lighter;
@@ -233,9 +236,11 @@ body {
 .card-footer{
     background-color: #5356A4;
     color: #FFFFFF;
+    height: 40px;
     display: flex;
     align-items: center;
     font-weight: normal;
+    font-size: 18px;
 }
 
 #save-button:disabled {
