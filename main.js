@@ -96,10 +96,10 @@ function searchIdeas() {
     grid.innerHTML = ''
     for (var i = 0; i < savedIdeas.length; i++) {
         if (savedIdeas[i].title.includes(searchIdeasInput.value) || savedIdeas[i].body.includes(searchIdeasInput.value)) {
-        displayCards(savedIdeas[i]);
+            displayCards(savedIdeas[i]);
         } 
         else {
-            console.log('condition 2')
+            savedIdeas[i].pop
         }
     }
 }
