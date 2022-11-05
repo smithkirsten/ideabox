@@ -22,19 +22,20 @@
         <section class="main-content"> <!-- class section was empty, so I added one-->
             <form class="right-container"> <!-- added a class for the form section-->
                 <label for="title" id="title-text">Title</label><!-- <br> adds a line break from the input section's title and the input section itself-->
-                <textarea type="text" name="title" id="title-input"></textarea>
+                <input type="text" name="title" id="title-input"></textarea>
                 
                 <label for="body" id="body-text">Body</label><!-- <br> adds a line break from the input section's title and the input section itself-->
-                <textarea type="text" name="body" id="body-input"></textarea><br>
+                <input type="text" name="body" id="body-input"></textarea><br>
 
                 <button id="save-button" type="submit">Save</button>
             <div class="search-ideas">
                 <img src="./assets/search.svg" alt="magnifying glass" id="search-bar-icon">
                 <input type="text" placeholder="Search ideas" name="search" id="search-bar"><br>
             </div>
+            </form>
             <div class="right-container grid" id="grid-container"></div>
             </div>  
-            </form>  <!--- I added a closing form tag. form should end before grid, but when i put it there it changes layout -->
+         <!--- I added a closing form tag. form should end before grid, but when i put it there it changes layout -->
         </section>
 
     </body>
