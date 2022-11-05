@@ -78,29 +78,33 @@ body {
     align-items: center;
     flex-direction: column;
     font-weight: bold;
-    justify-content: space-around;
-    height: 35vh;  
+    justify-content: flex-start;
+    height: 50vh;
     width: 80vw;
     padding: 4vh 0 0 0;
 }
 
-#title-text {
-    color: #1F1F3D;
-    margin-left: -270px;
+#label-wrappers {
+    display: flex;
+    width: 50%;
+}
+.input-labels {
+    margin: 0;
     padding-bottom: 5px;
+    color: #1F1F3D;
+/* .text-label {
+
+} */
+}
+.body-label {
+    padding-top: 22px;
 }
 
-#body-text {
-    color: #1F1F3D;
-    margin-left: -270px;
-    padding-top: 22px;
-    padding-bottom: 5px;
-}
 #title-input {
     border: 2px solid #5356A4;
     border-radius: 4px;
     height: 40px;
-    width: 300px;
+    width: 50%;
     font-family: "Open Sans", sans-serif;
     font-weight: lighter;
     color: #5356A4;
@@ -110,7 +114,7 @@ body {
     border: 2px solid #5356A4;
     border-radius: 4px;
     height: 85px;
-    width: 300px;
+    width: 50%;
     font-family: "Open Sans", sans-serif;
     font-weight: light;
     color: #5356A4
@@ -126,11 +130,8 @@ body {
     font-weight: bolder;
     cursor: pointer;
     height: 50px;
-    width: 307px;
+    width: 50%;
 }
-
-
-
 
 /*=========
 }============*/
@@ -142,7 +143,8 @@ body {
     background-color: #eaeaf4;
     justify-items: center;
     justify-content: space-evenly;
-  }
+    padding: 20px 15px 20px 15px;
+}
 
 #search-bar-icon {
     height: 25px;
@@ -160,12 +162,14 @@ body {
     font-weight: light;
     color: #5356A4;
     height: 40px;
-    width: 255px;
+    width: 715px;
     margin: 20px 0 20px 0
 }
 
 .search-ideas {
-    display: flex;   
+    display: flex;
+    width: 50%;
+    justify-content: center;   
 }
 
 ::placeholder {
@@ -181,7 +185,7 @@ body {
     background-color: #FFFFFF;
     height: 270px;
     padding: 0;
-    width: 225px;
+    width: 90%;
 }
 .card-header{
     background-color: #1F1F3D;
