@@ -92,15 +92,24 @@ function deleteIdea(event){
 }
 
 
-
-
-    function searchIdeas() {
-        for (var i = 0; i < savedIdeas.length; i++) {
-            if (savedIdeas[i].title.includes(searchIdeasInput.value) || savedIdeas[i].body.includes(searchIdeasInput.value)) {
-        }
+function searchIdeas() {
+    grid.innerHTML = ''
+    for (var i = 0; i < savedIdeas.length; i++) {
+        if (savedIdeas[i].title.includes(searchIdeasInput.value) || savedIdeas[i].body.includes(searchIdeasInput.value)) {
+        displayCards(savedIdeas[i]);
+        } 
+        else {
+            console.log('condition 2')
         }
     }
+}
 
+/*if (body && body.trim().length > 0){
+    body = body.trim().toLowerCase()
+}
+if (title && title.trim().length > 0){
+    title = title.trim().toLowerCase()
+} */
 
 
 
@@ -173,4 +182,4 @@ function deleteIdea(event){
 //other possible resources: change event listener
 
 //DONE:
-    //-save new idea card & clear input fields
+//-save new idea card & clear input fields
