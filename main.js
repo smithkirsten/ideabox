@@ -30,6 +30,8 @@ searchIdeasInput.addEventListener('keyup', searchIdeas)
 
 //global variables for cards
 var savedIdeas = [];
+var favoritedIdeas = [];
+var searchListIdeas = [];
 var ideaCard;
 
 // functions 
@@ -45,10 +47,10 @@ function checkStarValue(card) {
     }
     return './assets/star.svg';
 }
-function displayCards(){
+function displayCards(){ //have displayCards accept different arrays within the parameters
     var starImage;
     grid.innerHTML = '';
-    for(var i = 0; i < savedIdeas.length; i++) {
+    for(var i = 0; i < savedIdeas.length; i++) { //change savedIdeas.length to insertAnotherArray.length
         starImage = checkStarValue(savedIdeas[i]);
         grid.innerHTML += `<article id="${savedIdeas[i].id}" class="idea-card"> 
         <header class="card-header">
@@ -91,6 +93,9 @@ function deleteIdea(event){
     displayCards();
 }
 
+function removeCards() {
+
+}
 
 function searchIdeas() {
     grid.innerHTML = ''
@@ -99,10 +104,14 @@ function searchIdeas() {
             displayCards(savedIdeas[i]);
         } 
         else {
-            savedIdeas[i].pop
+            
         }
     }
 }
+
+//keep savedIdeas array
+//make more arrays (one for favorites, one for stuff in the search bar)
+
 
 /*if (body && body.trim().length > 0){
     body = body.trim().toLowerCase()
