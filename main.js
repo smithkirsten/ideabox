@@ -3,6 +3,7 @@ var saveButton = document.querySelector('#save-button');
 var grid = document.querySelector('#grid-container');
 var titleInput = document.querySelector('#title-input');
 var bodyInput = document.querySelector('#body-input');
+var searchIdeasInput = document.getElementById('search-bar');
 
 // eventListeners
 
@@ -23,12 +24,13 @@ grid.addEventListener('click',function(event){
     whatClicked(event);
 });
 
+titleInput.addEventListener("keyup", disableSavedButton);
+bodyInput.addEventListener("keyup", disableSavedButton);
+searchIdeasInput.addEventListener('keyup', searchIdeas)
 
 //global variables for cards
 var savedIdeas = [];
 var ideaCard;
-titleInput.addEventListener("keyup", disableSavedButton);
-bodyInput.addEventListener("keyup", disableSavedButton)
 
 // functions 
 function saveIdeaCard() {
@@ -66,6 +68,7 @@ function displayCards(){
 function clearInputs(){
     titleInput.value = ''
     bodyInput.value = ''
+    searchIdeasInput.value = ''
 }
 function whatClicked(event) {
     if(event.target.classList.contains('x-icon')) {
@@ -88,6 +91,15 @@ function deleteIdea(event){
     displayCards();
 }
 
+
+
+
+    function searchIdeas() {
+        for (var i = 0; i < savedIdeas.length; i++) {
+            if (savedIdeas[i].title.includes(searchIdeasInput.value) || savedIdeas[i].body.includes(searchIdeasInput.value)) {
+        }
+        }
+    }
 
 
 
