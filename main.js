@@ -4,7 +4,7 @@ var grid = document.querySelector('#grid-container');
 var titleInput = document.querySelector('#title-input');
 var bodyInput = document.querySelector('#body-input');
 var searchIdeasInput = document.getElementById('search-bar');
-
+//query select favorites button
 
 // eventListeners
 
@@ -16,9 +16,7 @@ saveButton.addEventListener('click', function(event) {
     disableSavedButton();
 });
 
-
-
-// 
+//eventListener for favorite button
 
 window.addEventListener('load', function() {
     clearInputs();
@@ -55,7 +53,7 @@ function checkStarValue(card) {
 function displayCards(array){ //have displayCards accept different arrays within the parameters
     var starImage;
     grid.innerHTML = '';
-    for(var i = 0; i < array.length; i++) { //change savedIdeas.length to insertAnotherArray.length
+    for(var i = 0; i < array.length; i++) {
         starImage = checkStarValue(array[i]);
         grid.innerHTML += `<article id="${array[i].id}" class="idea-card"> 
         <header class="card-header">
@@ -84,6 +82,7 @@ function whatClicked(event) {
         for(var i = 0; i < savedIdeas.length; i++) {
             if(savedIdeas[i].id.toString() === event.target.closest('.idea-card').id) {
                 savedIdeas[i].updateIdea();
+                //push savedIdeas[i] to favorite array
             }
         }
         displayCards(savedIdeas);
@@ -97,18 +96,22 @@ function deleteIdea(event){
     }
     displayCards(savedIdeas);
 }
+//function displayFavorites() {
+    //displayCards(favorites)
+//}
 
-// function removeCards() {
+
 
 // }
-
+//upon each key up, deploy:
 // function searchIdeas() {
-//     grid.innerHTML = ''
+    //copy all of saved ideas into search array
 //     for (var i = 0; i < savedIdeas.length; i++) {
-//         if (savedIdeas[i].title.includes(searchIdeasInput.value) || savedIdeas[i].body.includes(searchIdeasInput.value)) {
-//             displayCards(savedIdeas[i]);
+//         if (!savedIdeas[i].title.includes(searchIdeasInput.value) || !savedIdeas[i].body.includes(searchIdeasInput.value)) {
+//             //splice any card that does not include that value of the search bar
 //         } 
 //     }
+    // displayCard(search array)
 // }
 
 //keep savedIdeas array
