@@ -11,15 +11,9 @@
 body {
     display: flex;
     margin: 0;
-    height: 100%;
-    width: 100%
+    height: 100vh;
+    width: 100%;
 }
-
-
-.grid-container {
-    display: flex;
-}
-
 .menu-section {
     background-color: #1F1F3D;
     border-right: 2px solid #eaeaf4;
@@ -29,7 +23,7 @@ body {
     flex-direction: column;
     font-weight: bold;
     height: 100vh; 
-    width: 360px;
+    width: 35%;
 }
 .title {
     font-size: 20px;
@@ -56,7 +50,7 @@ body {
     font-weight: bolder;
     background: none;
     border: none;
-    margin: -7px 30px 28px -80px;
+    margin: -7px -25px 28px -80px;
 }
 #show-starred-ideas-button {
     background-color: #5356A4;
@@ -66,11 +60,13 @@ body {
     font-weight: bold;
     cursor: not-allowed;
     height: 48px;
-    width: 200px;
+    width: 100%;
     border: 1px solid #353567;
     border-radius: 2px;
 }
-
+.main-content{
+    width: 77%;
+}
 .right-container {
     background-color: #A9AAD2;
     font-family: "Open Sans", sans-serif;
@@ -78,29 +74,28 @@ body {
     align-items: center;
     flex-direction: column;
     font-weight: bold;
-    justify-content: space-around;
-    height: 35vh;  
+    justify-content: flex-start;
+    height: 43vh;
     width: 80vw;
     padding: 4vh 0 0 0;
 }
-
-#title-text {
-    color: #1F1F3D;
-    margin-left: -270px;
-    padding-bottom: 5px;
+#label-wrappers {
+    display: flex;
+    width: 50%;
 }
-
-#body-text {
-    color: #1F1F3D;
-    margin-left: -270px;
-    padding-top: 22px;
+.input-labels {
+    margin: 0;
     padding-bottom: 5px;
+    color: #1F1F3D;
+}
+.body-label {
+    padding-top: 22px;
 }
 #title-input {
     border: 2px solid #5356A4;
     border-radius: 4px;
     height: 40px;
-    width: 300px;
+    width: 50%;
     font-family: "Open Sans", sans-serif;
     font-weight: lighter;
     color: #5356A4;
@@ -110,7 +105,7 @@ body {
     border: 2px solid #5356A4;
     border-radius: 4px;
     height: 85px;
-    width: 300px;
+    width: 50%;
     font-family: "Open Sans", sans-serif;
     font-weight: light;
     color: #5356A4
@@ -126,24 +121,8 @@ body {
     font-weight: bolder;
     cursor: pointer;
     height: 50px;
-    width: 307px;
+    width: 50%;
 }
-
-
-
-
-/*=========
-}============*/
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    height: 57vh;
-    background-color: #eaeaf4;
-    justify-items: center;
-    justify-content: space-evenly;
-  }
-
 #search-bar-icon {
     height: 25px;
     width: 25px;
@@ -160,55 +139,48 @@ body {
     font-weight: light;
     color: #5356A4;
     height: 40px;
-    width: 255px;
+    width: 715px;
     margin: 20px 0 20px 0
 }
-
 .search-ideas {
-    display: flex;   
+    display: flex;
+    width: 50%;
+    justify-content: center;   
 }
-
 ::placeholder {
     color: #5356A4;
 }
-
 /*=========
 }============*/
-
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 48vh;
+    background-color: #eaeaf4;
+    grid-gap: 20px;
+    padding: 20px;
+    width: 97%;
+}
+/*=========
+}============*/
 .idea-card {
-    margin: 0;
     border: solid 2px #1F1F3D;
     background-color: #FFFFFF;
-    height: 270px;
-    padding: 0;
-    width: 225px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 .card-header{
     background-color: #1F1F3D;
     display: flex;
     justify-content: space-between;
+    height: 5vh;
+    width: 100%;
+    align-items: center;
 }
 .icons{
-    height: 25px;
+    height: 35px;
 }
-/* .not-favorite {
-    background: url("assets/star-active.svg")repeat; 
-}
-.not-favorite:hover {
-    opacity: 0;
-}
-.favorite {
-    opacity: 0;
-}
-.favorite:hover {
-    opacity: 1; */
-}
-/* .star-icon {
-    background: url("assets/star-active.svg")repeat;
-}
-.star-icon:hover {
-    background: url("assets/star.svg")repeat;
-} */
 .input-content{
     background-color: #FFFFFF;
 }
@@ -220,7 +192,6 @@ body {
 .idea-card-body{
     color:#1F1F3D;
     font-weight: lighter;
-    height: 155px;
     margin: 0;
     padding: 10px;
     font-weight: lighter;
@@ -229,11 +200,12 @@ body {
 .card-footer{
     background-color: #5356A4;
     color: #FFFFFF;
+    height: 5vh;
     display: flex;
     align-items: center;
     font-weight: normal;
+    font-size: 18px;
 }
-
 #save-button:disabled {
     background-color: #8D8EB4;
     border: 2px solid #626385;
