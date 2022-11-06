@@ -200,8 +200,8 @@ body {
     opacity: 0;
 }
 .favorite:hover {
-    opacity: 1; */
-}
+    opacity: 1; 
+} */
 /* .star-icon {
     background: url("assets/star-active.svg")repeat;
 }
@@ -288,9 +288,6 @@ background-color: #E9E9F3;
 background-color: #5356A4;
 /Entire Main Section background color
 background-color: #1F1F3D;
-
 --line 76 - changed from 40% to 370px
 because anything below50% wouldn't change
 */
-
-

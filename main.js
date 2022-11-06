@@ -3,6 +3,8 @@ var saveButton = document.querySelector('#save-button');
 var grid = document.querySelector('#grid-container');
 var titleInput = document.querySelector('#title-input');
 var bodyInput = document.querySelector('#body-input');
+var searchIdeasInput = document.getElementById('search-bar');
+
 
 // eventListeners
 
@@ -10,10 +12,13 @@ saveButton.addEventListener('click', function(event) {
     event.preventDefault();
     saveIdeaCard();
     clearInputs();
-    displayCards();
-    disableSavedButton();
+    displayCards(savedIdeas);
     disableSavedButton();
 });
+
+
+
+// 
 
 window.addEventListener('load', function() {
     clearInputs();
@@ -24,12 +29,15 @@ grid.addEventListener('click',function(event){
     whatClicked(event);
 });
 
+titleInput.addEventListener("keyup", disableSavedButton);
+bodyInput.addEventListener("keyup", disableSavedButton);
+// searchIdeasInput.addEventListener('keyup', searchIdeas)
 
 //global variables for cards
 var savedIdeas = [];
+var favoritedIdeas = [];
+var searchListIdeas = [];
 var ideaCard;
-titleInput.addEventListener("keyup", disableSavedButton);
-bodyInput.addEventListener("keyup", disableSavedButton)
 
 // functions 
 function saveIdeaCard() {
@@ -44,19 +52,19 @@ function checkStarValue(card) {
     }
     return './assets/star.svg';
 }
-function displayCards(){
+function displayCards(array){ //have displayCards accept different arrays within the parameters
     var starImage;
     grid.innerHTML = '';
-    for(var i = 0; i < savedIdeas.length; i++) {
-        starImage = checkStarValue(savedIdeas[i]);
-        grid.innerHTML += `<article id="${savedIdeas[i].id}" class="idea-card"> 
+    for(var i = 0; i < array.length; i++) { //change savedIdeas.length to insertAnotherArray.length
+        starImage = checkStarValue(array[i]);
+        grid.innerHTML += `<article id="${array[i].id}" class="idea-card"> 
         <header class="card-header">
             <img class="icons star-icon not-favorite" src="${starImage}" alt="star icon">
             <img class="icons x-icon" src="./assets/delete.svg" alt="x icon">
         </header>
         <div class="input-content">
-        <h2 class="idea-card-title">${savedIdeas[i].title}</h2>
-        <p class="idea-card-body">${savedIdeas[i].body}</p>
+        <h2 class="idea-card-title">${array[i].title}</h2>
+        <p class="idea-card-body">${array[i].body}</p>
         </div>
         <footer class="card-footer">
             <img class="icons comment-icon" src="./assets/comment.svg" alt="plus icon"><span>Comment</span>
@@ -67,6 +75,7 @@ function displayCards(){
 function clearInputs(){
     titleInput.value = ''
     bodyInput.value = ''
+    searchIdeasInput.value = ''
 }
 function whatClicked(event) {
     if(event.target.classList.contains('x-icon')) {
@@ -77,7 +86,7 @@ function whatClicked(event) {
                 savedIdeas[i].updateIdea();
             }
         }
-        displayCards();
+        displayCards(savedIdeas);
     }
 }
 function deleteIdea(event){
@@ -86,10 +95,32 @@ function deleteIdea(event){
             savedIdeas.splice(i, 1);
         }
     }
-    displayCards();
+    displayCards(savedIdeas);
 }
 
+// function removeCards() {
 
+// }
+
+// function searchIdeas() {
+//     grid.innerHTML = ''
+//     for (var i = 0; i < savedIdeas.length; i++) {
+//         if (savedIdeas[i].title.includes(searchIdeasInput.value) || savedIdeas[i].body.includes(searchIdeasInput.value)) {
+//             displayCards(savedIdeas[i]);
+//         } 
+//     }
+// }
+
+//keep savedIdeas array
+//make more arrays (one for favorites, one for stuff in the search bar)
+
+
+/*if (body && body.trim().length > 0){
+    body = body.trim().toLowerCase()
+}
+if (title && title.trim().length > 0){
+    title = title.trim().toLowerCase()
+} */
 
 
 
@@ -141,16 +172,6 @@ function deleteIdea(event){
             }
         }
 
-        function disableSavedButton(){
-            if (titleInput.value == '' || titleBody.value == '') {
-                saveButton.disabled = true;
-                saveButton.classList.add("disabled-button");
-            } else {
-                saveButton.disabled = false;
-                saveButton.classList.remove("disabled-button");
-            }
-        }
-
 
 // Iteration 3
 
@@ -172,4 +193,4 @@ function deleteIdea(event){
 //other possible resources: change event listener
 
 //DONE:
-    //-save new idea card & clear input fields
+//-save new idea card & clear input fields
