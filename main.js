@@ -5,7 +5,6 @@ var titleInput = document.querySelector('#title-input');
 var bodyInput = document.querySelector('#body-input');
 
 // eventListeners
-
 saveButton.addEventListener('click', function(event) {
     event.preventDefault();
     saveIdeaCard();
@@ -13,7 +12,6 @@ saveButton.addEventListener('click', function(event) {
     displayCards();
     disableSavedButton();
 });
-
 window.addEventListener('load', function() {
     clearInputs();
     disableSavedButton();
@@ -22,13 +20,12 @@ grid.addEventListener('click',function(event){
     event.preventDefault();
     whatClicked(event);
 });
-
-
-//global variables for cards
-var savedIdeas = [];
-var ideaCard;
 titleInput.addEventListener("keyup", disableSavedButton);
 bodyInput.addEventListener("keyup", disableSavedButton)
+
+// global variables for cards
+var savedIdeas = [];
+var ideaCard;
 
 // functions 
 function saveIdeaCard() {
@@ -36,7 +33,7 @@ function saveIdeaCard() {
     var bodyValue = bodyInput.value;
     ideaCard = new Idea(titleValue, bodyValue);
     savedIdeas.push(ideaCard);
-    }
+}
 function checkStarValue(card) {
     if(card.star){
         return './assets/star-active.svg';
@@ -58,7 +55,6 @@ function displayCards(){
         <p class="idea-card-body">${savedIdeas[i].body}</p>
         </div>
         <footer class="card-footer">
-            <img class="icons comment-icon" src="./assets/comment.svg" alt="plus icon"><span>Comment</span>
         </footer>
         </article>`;
     }

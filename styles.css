@@ -1,13 +1,3 @@
-/** {
-    border: black solid;
-} */
-/*#title {
-    background-color: #1F1F3D;
-    background-color: #A9AAD2;
-    background-color: #EAEAF4;
-    font-family: "Lucida Console", "Courier New", monospace;
-}*/
-
 body {
     display: flex;
     margin: 0;
@@ -34,35 +24,7 @@ body {
     font-weight: bolder;
     color: #E9E9F3;
     margin: 19px;
-}
-.menu-functions-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-top: 2px solid #353567;
     border-bottom: 2px solid #353567;
-    padding: 28px 18px;
-}
-#filter-starred-ideas-button {
-    color: #BFBFDD;
-    font-family: "Open Sans", sans-serif;
-    font-size: 14px;
-    font-weight: bolder;
-    background: none;
-    border: none;
-    margin: -7px -25px 28px -80px;
-}
-#show-starred-ideas-button {
-    background-color: #5356A4;
-    font-family: "Open Sans", sans-serif;
-    color: #E9E9F3;
-    font-size: 19px;
-    font-weight: bold;
-    cursor: not-allowed;
-    height: 48px;
-    width: 100%;
-    border: 1px solid #353567;
-    border-radius: 2px;
 }
 .main-content{
     width: 77%;
@@ -100,7 +62,6 @@ body {
     font-weight: lighter;
     color: #5356A4;
 }
-
 #body-input {
     border: 2px solid #5356A4;
     border-radius: 4px;
@@ -110,7 +71,6 @@ body {
     font-weight: light;
     color: #5356A4
 }
-
 #save-button {
     color: #E9E9F3;
     font-family: "Open Sans", sans-serif;
@@ -123,35 +83,6 @@ body {
     height: 50px;
     width: 50%;
 }
-#search-bar-icon {
-    height: 25px;
-    width: 25px;
-    background-color: #353567;
-    padding: 10px;
-    margin-top: 21px;
-    border: 2px 0 2px 2px #5356A4 ;
-}
-
-#search-bar {
-    border: 2px solid #5356A4;
-    border-radius: 4px;
-    font-family: "Open Sans", sans-serif;
-    font-weight: light;
-    color: #5356A4;
-    height: 40px;
-    width: 715px;
-    margin: 20px 0 20px 0
-}
-.search-ideas {
-    display: flex;
-    width: 50%;
-    justify-content: center;   
-}
-::placeholder {
-    color: #5356A4;
-}
-/*=========
-}============*/
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -161,8 +92,6 @@ body {
     padding: 20px;
     width: 97%;
 }
-/*=========
-}============*/
 .idea-card {
     border: solid 2px #1F1F3D;
     background-color: #FFFFFF;
@@ -199,71 +128,12 @@ body {
 }
 .card-footer{
     background-color: #5356A4;
-    color: #FFFFFF;
     height: 5vh;
-    display: flex;
-    align-items: center;
-    font-weight: normal;
-    font-size: 18px;
 }
 #save-button:disabled {
     background-color: #8D8EB4;
     border: 2px solid #626385;
     cursor: not-allowed;
 }
-
-
-
-
-/* The current css file isn't connected to the HTML file for some reason */
-
-/* Using inline CSS for the HTML file works but we should try to resolve getting the styles.css file to connect to index.html*/
-
-/*
-//Header Text
-font-family: "Open Sans", bold
----
-//Body and Label Text
-font-family: "Open Sans", light
----
-//Website Background Colors
-/darkest purple
-background-color: #1F1F3D;
-/medium purple
-background-color: #A9AAD2;
-/lightest purple
-background-color: #EAEAF4;
----
-//Idea Card Colors
-/star and exit bar (darkest purple)
-/idea title heading color
-/idea card border color
-background-color: #1F1F3D;
-/idea card background color
-background-color: #FFFFFF;
-/body text color
-background-color: #1F1F3D;
-/comment text color
-background-color: #E9E9F3;
-/comment bar color
-background-color: #5356A4;
----
-//Menu Section Colors
-/IdeaBox text/heading
-background-color: #E9E9F3;
-/line break between IdeaBox heading and Filtered Starred Ideas
-background-color: #353567;
-/Filtered Starred Ideas text/heading
-background-color: #BFBFDD;
-/Show Starred Ideas text color
-background-color: #E9E9F3;
-/Show Starred Ideas button color
-background-color: #5356A4;
-/Entire Main Section background color
-background-color: #1F1F3D;
-
---line 76 - changed from 40% to 370px
-because anything below50% wouldn't change
-*/
 
 
