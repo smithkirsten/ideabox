@@ -64,7 +64,7 @@ body {
     color: #E9E9F3;
     font-size: 19px;
     font-weight: bold;
-    cursor: not-allowed;
+    cursor: pointer;
     height: 48px;
     width: 200px;
     border: 1px solid #353567;
@@ -190,24 +190,6 @@ body {
 .icons{
     height: 25px;
 }
-/* .not-favorite {
-    background: url("assets/star-active.svg")repeat; 
-}
-.not-favorite:hover {
-    opacity: 0;
-}
-.favorite {
-    opacity: 0;
-}
-.favorite:hover {
-    opacity: 1; 
-} */
-/* .star-icon {
-    background: url("assets/star-active.svg")repeat;
-}
-.star-icon:hover {
-    background: url("assets/star.svg")repeat;
-} */
 .input-content{
     background-color: #FFFFFF;
 }
@@ -233,7 +215,7 @@ body {
     font-weight: normal;
 }
 
-#save-button:disabled {
+#save-button:disabled, #show-starred-ideas-button:disabled {
     background-color: #8D8EB4;
     border: 2px solid #626385;
     cursor: not-allowed;

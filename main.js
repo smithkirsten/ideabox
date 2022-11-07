@@ -4,7 +4,7 @@ var grid = document.querySelector('#grid-container');
 var titleInput = document.querySelector('#title-input');
 var bodyInput = document.querySelector('#body-input');
 var searchIdeasInput = document.getElementById('search-bar');
-//query select favorites button
+var showStarredButton = document.getElementById('show-starred-ideas-button');
 
 // eventListeners
 
@@ -16,11 +16,12 @@ saveButton.addEventListener('click', function(event) {
     disableSavedButton();
 });
 
-//eventListener for favorite button
+showStarredButton.addEventListener('click', flipButton)
 
 window.addEventListener('load', function() {
     clearInputs();
     disableSavedButton();
+    disableFavoritesButton();
 })
 grid.addEventListener('click',function(event){
     event.preventDefault();
@@ -50,7 +51,7 @@ function checkStarValue(card) {
     }
     return './assets/star.svg';
 }
-function displayCards(array){ //have displayCards accept different arrays within the parameters
+function displayCards(array){
     var starImage;
     grid.innerHTML = '';
     for(var i = 0; i < array.length; i++) {
@@ -75,19 +76,38 @@ function clearInputs(){
     bodyInput.value = ''
     searchIdeasInput.value = ''
 }
+function disableSavedButton(){
+    if (titleInput.value == '' || bodyInput.value == '') {
+        saveButton.disabled = true;
+        saveButton.classList.add("disabled-button");
+    } else {
+        saveButton.disabled = false;
+        saveButton.classList.remove("disabled-button");
+    }
+}
 function whatClicked(event) {
     if(event.target.classList.contains('x-icon')) {
         deleteIdea(event);
-    } else if (event.target.classList.contains('star-icon')) {
-        for(var i = 0; i < savedIdeas.length; i++) {
-            if(savedIdeas[i].id.toString() === event.target.closest('.idea-card').id) {
-                savedIdeas[i].updateIdea();
-                //push savedIdeas[i] to favorite array
+        for(var i = 0; i < favoritedIdeas.length; i++) {
+            if(favoritedIdeas[i].id.toString() === event.target.closest('.idea-card').id) {
+                removeFavorite();
             }
         }
-        displayCards(savedIdeas);
+    } else if (event.target.classList.contains('star-icon')) {
+        for(var i = 0; i < savedIdeas.length; i++) {
+            console.log("Iteration: ", i)
+            if(savedIdeas[i].id.toString() === event.target.closest('.idea-card').id) {
+                console.log("saved Ideas: ", savedIdeas[i].id)
+                console.log("Event Target: ", event.target.closest('.idea-card').id)
+                savedIdeas[i].updateIdea();
+            }
+        }    
     }
+    updateFavoritesArray();
+    displayCards(savedIdeas);
 }
+
+//add splice from favorites array
 function deleteIdea(event){
     for(var i = 0; i < savedIdeas.length; i++) {
         if(savedIdeas[i].id.toString() === event.target.closest('.idea-card').id) {
@@ -96,9 +116,67 @@ function deleteIdea(event){
     }
     displayCards(savedIdeas);
 }
-//function displayFavorites() {
-    //displayCards(favorites)
-//}
+function removeFavorite() {
+    for(var i = 0; i < favoritedIdeas.length; i++){
+        if(!favoritedIdeas[i].star) {
+            favoritedIdeas.splice(i, 1);
+        }
+    }
+}
+//function to display starred ideas
+function displayStarred() {
+    displayCards(favoritedIdeas);
+    //change button innerText here?
+}
+function updateFavoritesArray() {
+    favoritedIdeas = [];
+    for(var i = 0; i < savedIdeas.length; i++) {
+        if(savedIdeas[i].star) {
+            console.log("inside star true conditional (push)")
+            favoritedIdeas.push(savedIdeas[i]);
+            console.log(favoritedIdeas);
+        }
+    }
+    disableFavoritesButton();
+}
+function disableFavoritesButton(){
+    if(favoritedIdeas.length === 0) {
+        showStarredButton.disabled = true;
+        showStarredButton.classList.add("disabled-button")
+    } else {
+        showStarredButton.disabled = false;
+        showStarredButton.classList.remove("disabled-button");
+    }
+
+}
+function flipButton() {
+    if(showStarredButton.innerText === 'Show Starred Ideas') {
+        showStarredButton.innerText = 'Show All Ideas';
+        displayStarred();
+    } else {
+        showStarredButton.innerText = 'Show Starred Ideas';
+        displayCards(savedIdeas);
+    }
+}
+
+
+
+//key up listener
+//search function
+    //local array search matches = [];
+    //for loop saved array
+        //if index position includes input value
+            //push to local array
+    //display(searched)
+    
+
+
+
+
+
+
+
+
 
 
 
@@ -111,7 +189,7 @@ function deleteIdea(event){
 //             //splice any card that does not include that value of the search bar
 //         } 
 //     }
-    // displayCard(search array)
+    // displayCard(favorites)
 // }
 
 //keep savedIdeas array
@@ -134,56 +212,8 @@ if (title && title.trim().length > 0){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 //hover to change img for star
 //hover to change img for x
-
-//when star clicked
-    //event.target.someParentSomethingIdea.updateIdea
-        //this.star = true;
-         //img toggles to red
-            //if event.target
-
-
-//Iteration 2
-//style card
-
-// disable save button until both input fields have content
-    //css pseudo-class disabled can work like hidden 
-    //listen for key down in either field. Fires: if both .values === true; THEN remove disabled
-        // might have to change cursor property separately
-        //[https://developer.mozilla.org/en-US/docs/Web/CSS/:disabled](https://developer.mozilla.org/en-US/docs/Web/CSS/:disabled)
-        //[https://css-tricks.com/almanac/selectors/d/disabled/](https://css-tricks.com/almanac/selectors/d/disabled/)
-        function disableSavedButton(){
-            if (titleInput.value == '' || bodyInput.value == '') {
-                saveButton.disabled = true;
-                saveButton.classList.add("disabled-button");
-            } else {
-                saveButton.disabled = false;
-                saveButton.classList.remove("disabled-button");
-            }
-        }
-
-
-// Iteration 3
-
-// we will need a delete function that uses event delegation
-    // put listener on grid
-    // if(event.target.classList.contains(delete button))
-        // event.target.closest(.ideaCard).remove()
-    // splice object instance from savedIdeas array 
-
 
 
 // favorite function
@@ -194,6 +224,3 @@ if (title && title.trim().length > 0){
     //.contains() (add hidden class to cards that don't contain ALL letters (&&)... or concat? to search ordered letters?)
 
 //other possible resources: change event listener
-
-//DONE:
-//-save new idea card & clear input fields
