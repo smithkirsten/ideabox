@@ -18,18 +18,18 @@ grid.addEventListener('click',function(event){
     event.preventDefault();
     whatClicked(event);
 });
+titleInput.addEventListener("keyup", disableSavedButton);
+bodyInput.addEventListener("keyup", disableSavedButton)
 
 var savedIdeas = [];
 var ideaCard;
-titleInput.addEventListener("keyup", disableSavedButton);
-bodyInput.addEventListener("keyup", disableSavedButton)
 
 function saveIdeaCard() {
     var titleValue = titleInput.value;
     var bodyValue = bodyInput.value;
     ideaCard = new Idea(titleValue, bodyValue);
     savedIdeas.push(ideaCard);
-    }
+}
 function checkStarValue(card) {
     if(card.star){
         return './assets/star-active.svg';
