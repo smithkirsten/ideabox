@@ -1,10 +1,8 @@
-// querySelectors
 var saveButton = document.querySelector('#save-button');
 var grid = document.querySelector('#grid-container');
 var titleInput = document.querySelector('#title-input');
 var bodyInput = document.querySelector('#body-input');
 
-// eventListeners
 saveButton.addEventListener('click', function(event) {
     event.preventDefault();
     saveIdeaCard();
@@ -23,11 +21,9 @@ grid.addEventListener('click',function(event){
 titleInput.addEventListener("keyup", disableSavedButton);
 bodyInput.addEventListener("keyup", disableSavedButton)
 
-// global variables for cards
 var savedIdeas = [];
 var ideaCard;
 
-// functions 
 function saveIdeaCard() {
     var titleValue = titleInput.value;
     var bodyValue = bodyInput.value;

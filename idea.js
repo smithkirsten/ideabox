@@ -12,4 +12,3 @@ class Idea{
             this.star = true;
         }
     }
-}

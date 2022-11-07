@@ -82,6 +82,7 @@ body {
     cursor: pointer;
     height: 50px;
     width: 50%;
+    margin-top: 20px;
 }
 .grid {
     display: grid;
@@ -135,5 +136,3 @@ body {
     border: 2px solid #626385;
     cursor: not-allowed;
 }
-
-
