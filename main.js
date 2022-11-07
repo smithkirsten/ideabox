@@ -1,10 +1,7 @@
-// querySelectors
 var saveButton = document.querySelector('#save-button');
 var grid = document.querySelector('#grid-container');
 var titleInput = document.querySelector('#title-input');
 var bodyInput = document.querySelector('#body-input');
-
-// eventListeners
 
 saveButton.addEventListener('click', function(event) {
     event.preventDefault();
@@ -13,7 +10,6 @@ saveButton.addEventListener('click', function(event) {
     displayCards();
     disableSavedButton();
 });
-
 window.addEventListener('load', function() {
     clearInputs();
     disableSavedButton();
@@ -23,14 +19,11 @@ grid.addEventListener('click',function(event){
     whatClicked(event);
 });
 
-
-//global variables for cards
 var savedIdeas = [];
 var ideaCard;
 titleInput.addEventListener("keyup", disableSavedButton);
 bodyInput.addEventListener("keyup", disableSavedButton)
 
-// functions 
 function saveIdeaCard() {
     var titleValue = titleInput.value;
     var bodyValue = bodyInput.value;
@@ -58,7 +51,6 @@ function displayCards(){
         <p class="idea-card-body">${savedIdeas[i].body}</p>
         </div>
         <footer class="card-footer">
-            <img class="icons comment-icon" src="./assets/comment.svg" alt="plus icon"><span>Comment</span>
         </footer>
         </article>`;
     }
