@@ -31,8 +31,9 @@ Users can click a star in the upper left hand corner to favorite an idea, or the
 [Kirsten Smith](https://www.linkedin.com/in/kirsten-stamm-smith/)
 
 ### Learning Goals:
--we wanted to gain an understanding of how to write clean HTML and CSS. There still a lot to learn, but as a team we have grown a lot in our understanding.
--Incorporating and iterating over arrays in order to filter what is being displayed was quite a challenge, and in the end we didn't turn in a search function do to a few bugs, but we learned a lot about iterating through our displays.
+-Differentiate between the data model and the DOM when storing, manipulating, and displaying information from and for a user.
+-Practice writing semantic HTML and clean CSS
+-Learn to filter information based on a user's preferences
 
 ### Wins + Challenges:
 -Wins:
@@ -42,4 +43,4 @@ Users can click a star in the upper left hand corner to favorite an idea, or the
 	-Maintaining kindness and consideration as a team, in the midst of project stress!
 -Challenges:
 	-Early on, we experienced a HUGE obstacle that set us back several hours. The quotation marks in our scripts element had somehow picked up some near-invisible stylizing that made them entirely dysfunctional. After many hours of tearing apart our code and looking for the problem, one of our instructors was finally able to narrow it down to the quotation marks. It was a pretty tough start to the project and we lost a lot of valuable work time to that issue.
-	-Working across 3 different time zones was a challengegit 
+	-Working across 3 different time zones was a challenging. 
