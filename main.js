@@ -3,8 +3,8 @@ var saveButton = document.querySelector('#save-button');
 var grid = document.querySelector('#grid-container');
 var titleInput = document.querySelector('#title-input');
 var bodyInput = document.querySelector('#body-input');
-var searchIdeasInput = document.getElementById('search-bar');
 var showStarredButton = document.getElementById('show-starred-ideas-button');
+var searchBar = document.querySelector('#search-bar');
 
 // eventListeners
 
@@ -30,7 +30,11 @@ grid.addEventListener('click',function(event){
 
 titleInput.addEventListener("keyup", disableSavedButton);
 bodyInput.addEventListener("keyup", disableSavedButton);
-// searchIdeasInput.addEventListener('keyup', searchIdeas)
+searchBar.addEventListener('keyup', function(event) {
+    event.preventDefault;
+    console.log(searchBar.value)
+    search();
+})
 
 //global variables for cards
 var savedIdeas = [];
@@ -74,7 +78,7 @@ function displayCards(array){
 function clearInputs(){
     titleInput.value = ''
     bodyInput.value = ''
-    searchIdeasInput.value = ''
+    searchBar.value = ''
 }
 function disableSavedButton(){
     if (titleInput.value == '' || bodyInput.value == '') {
@@ -106,8 +110,6 @@ function whatClicked(event) {
     updateFavoritesArray();
     displayCards(savedIdeas);
 }
-
-//add splice from favorites array
 function deleteIdea(event){
     for(var i = 0; i < savedIdeas.length; i++) {
         if(savedIdeas[i].id.toString() === event.target.closest('.idea-card').id) {
@@ -123,10 +125,8 @@ function removeFavorite() {
         }
     }
 }
-//function to display starred ideas
 function displayStarred() {
     displayCards(favoritedIdeas);
-    //change button innerText here?
 }
 function updateFavoritesArray() {
     favoritedIdeas = [];
@@ -157,6 +157,25 @@ function flipButton() {
         showStarredButton.innerText = 'Show Starred Ideas';
         displayCards(savedIdeas);
     }
+}
+function search() {
+    console.log("in search function")
+    var searchValue = searchBar.value;
+    var searchMatches = [];
+    var standardTitle;
+    var standardBody;
+    //standardize everything to lowercase within the function but not globally
+    for(var i = 0; i < savedIdeas.length; i++) {
+        console.log("Search: ", searchBar.value);
+        standardTitle = savedIdeas[i].title.toLowerCase();
+        standardBody = savedIdeas[i].body.toLowerCase();
+        console.log(`Title: ${standardTitle}. Body: ${standardBody}`);
+        if(standardTitle.includes(searchValue) || standardBody.includes(searchValue)) {
+            searchMatches.push(savedIdeas[i]);
+            console.log(searchMatches);
+        }
+    }
+    displayCards(searchMatches);
 }
 
 

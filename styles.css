@@ -197,6 +197,7 @@ body {
     margin: 0;
     padding: 10px;
     font-size: 20px;
+    overflow-wrap: break-word; 
 }
 .idea-card-body{
     color:#1F1F3D;
@@ -206,6 +207,8 @@ body {
     padding: 10px;
     font-weight: lighter;
     font-size: 20px;
+    word-wrap: break-word;
+    overflow: auto;
 }
 .card-footer{
     background-color: #5356A4;
