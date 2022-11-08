@@ -40,7 +40,7 @@ Wins:
 * We were really close to getting the display favorites function to work without bugs and with more time, we suspect we would have been successful in working out the last bug. We did have the building blocks for the search feature which we were excited to try, but did not have time to implement before the due date. It felt like a win to be able to see the finish line, even though we didn’t get there by the time the horn blew!
 * Quynh and Michael got the disable function to work beautifully, which was the first time they had attempted that.
 * Kirsten and John celebrated both the initial creation of the data model and being able to successfully refactor DOM-related functions to make them more dynamic, which because necessary in later iterations.
-*Maintaining kindness with each other as a team, in the midst of project stress!
+* Maintaining kindness with each other as a team, in the midst of project stress!
 
 Challenges:
 * Early on, we experienced a HUGE obstacle that set us back several hours. The quotation marks in our scripts element had somehow picked up some near-invisible stylizing that made them entirely dysfunctional. After many hours of tearing apart our code and looking for the problem, one of our instructors was finally able to narrow it down to the quotation marks. It was a pretty tough start to the project and we lost a lot of valuable work time to that issue.
